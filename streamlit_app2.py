@@ -84,5 +84,11 @@ def show_predict_page():
         shap.force_plot(explainer.expected_value[predicted_class], shap_values_for_input, feature_names=['Age', 'Sex', 'Housing', 'Saving accounts', 'Checking account', 'Purpose'], matplotlib=True)
         st.pyplot()
         
+        # Display a summary plot for the SHAP values
+        st.subheader('Feature Importance')
+        shap_values = explainer.shap_values(input_array)
+        st.pyplot(shap.summary_plot(shap_values, input_array, feature_names=['Age', 'Sex', 'Housing', 'Saving accounts', 'Checking account', 'Purpose'], plot_type='bar'))
+
+        
 # Usage
 show_predict_page()
