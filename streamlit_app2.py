@@ -33,7 +33,8 @@ def predict_risk(age, sex, housing, saving_accounts, checking_account, purpose):
     input_array = np.array([[age, sex, housing, saving_accounts, checking_account, purpose]])
    
     # Make prediction
-    prediction = model.predict(input_array)[0]  # For binary classification
+    #prediction = model.predict(input_array)[0]  # For binary classification
+    prediction = model.predict_proba(input_array)[0]  # For binary classification
     return prediction
  
 def show_predict_page():
