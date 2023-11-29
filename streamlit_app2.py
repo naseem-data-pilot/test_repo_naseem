@@ -68,11 +68,10 @@ def show_predict_page():
         
         # Display result in a pie chart using Plotly
         labels = ['Low Risk', 'High Risk']
-        values = [result[0], result[1]]  # Directly use the result values
+        values = [result[0], result[1]] 
         fig = px.pie(names=labels, values=values, title='Credit Risk Prediction')
         st.plotly_chart(fig)
-        st.subheader(f"The predicted risk is: {result}")
-
+        
         # Generate SHAP values for the input
         shap_values = explainer.shap_values(input_array)
 
