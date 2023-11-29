@@ -8,7 +8,7 @@ os.environ["SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL"] = "False"
 
 
 def load_model():
-    with open(r'D:\\Work\\Code\\POC\\StreamLit_App\\rf_modelsss.pkl', 'rb') as file:
+    with open(r'rf_modelsss.pkl', 'rb') as file:
         model = pickle.load(file)
     return model[0]
  
